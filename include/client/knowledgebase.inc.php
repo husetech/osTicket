@@ -2,6 +2,14 @@
 if(!defined('OSTCLIENTINC')) die('Access Denied');
 
 ?>
+<div class="searchbar">
+<form method="get" action="faq.php">
+<input type="hidden" name="a" value="search"/>
+<input type="text" name="q" class="search" placeholder="<?php
+echo __('Search our knowledge base'); ?>"/>
+<input type="submit" style="display:none" value="search"/>
+</form>
+</div>
 <?php
 if($_REQUEST['q'] || $_REQUEST['cid'] || $_REQUEST['topicId']) { //Search
     $faqs = FAQ::allPublic()
